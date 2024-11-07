@@ -2,7 +2,7 @@
 def find_common_perticipants(str1_,str2_, n=','):
     set_first_group = set(str1_.split(n))
     set_second_group = set(str2_.split(n))
-    common_list = set_first_group.intersection((set_second_group))
+    common_list = set_first_group.intersection(set_second_group)
     common_list = list(common_list)
     common_list.sort()
     return(common_list)
