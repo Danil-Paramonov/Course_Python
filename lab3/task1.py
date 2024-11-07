@@ -1,10 +1,8 @@
 def find_index(bag, product):
-    a = 0
-    if product in bag:
-        a = bag.index(product)
-    else:
-        a = None
-    return a
+    for i, item in enumerate(bag):
+       if item == product:
+            return i
+
 
 items_list = ['яблоко', 'банан', 'апельсин', 'груша', 'киви', 'банан']
 
