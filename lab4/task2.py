@@ -2,6 +2,7 @@
 import csv
 import json
 
+
 INPUT_FILENAME = "input.csv"
 OUTPUT_FILENAME = "output.json"
 
@@ -12,7 +13,6 @@ def task(INPUT_FILENAME, razdel=',', line_terminator='\n') -> None:
 
     with open(INPUT_FILENAME, mode='r', newline='', encoding='utf-8') as csvfile:  # TODO считать содержимое csv файла
         reader = csv.DictReader(csvfile, delimiter=razdel)
-
         for row in reader:
             list.append(row)
     with open(OUTPUT_FILENAME, 'w') as file:
@@ -27,4 +27,3 @@ if __name__ == '__main__':
     with open(OUTPUT_FILENAME) as output_f:
         for line in output_f:
             print(line, end="")
-
