@@ -16,16 +16,15 @@ def task(INPUT_FILENAME, razdel=',', line_terminator='\n') -> None:
 
         for row in reader:
             list.append(row)
-
-    json_output = json.dumps(list, indent=4, ensure_ascii=False)
+    with open(OUTPUT_FILENAME, 'w') as file:
+        json_output = json.dump(list, file, indent=4, ensure_ascii=False)
 
     return json_output
 
-print(task(INPUT_FILENAME))
-# if __name__ == '__main__':
-#     # Нужно для проверки
-#     task(INPUT_FILENAME)
-#
-#     with open(OUTPUT_FILENAME) as output_f:
-#         for line in output_f:
-#             print(line, end="")
+if __name__ == '__main__':
+    # Нужно для проверки
+    task(INPUT_FILENAME)
+
+    with open(OUTPUT_FILENAME) as output_f:
+        for line in output_f:
+            print(line, end="")
